@@ -8,7 +8,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      test: true,
       visibleData: [],
       allTheData: [{name: "component_1", status: true},{name: "component_2", status: false}]
     };
@@ -21,14 +20,12 @@ class App extends Component {
         {$set: !commentIndex.status}
       }
     );
+
     var updatedVisibleData = update(this.state.allTheData, {
        $splice: [[commentIndex, 1, updatedComment]]
     });
     this.setState({
       visibleData: [...this.state.visibleData, component]
-    })
-    this.setState({
-      test: !this.state.test
     })
   }
 

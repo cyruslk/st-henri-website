@@ -6,6 +6,16 @@ img{
   width: 20vw;
 }
 
+.subtypes{
+  position: absolute;
+    right: 31vw;
+    top: 0;
+}
+
+.subtypes button{
+  display: block;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

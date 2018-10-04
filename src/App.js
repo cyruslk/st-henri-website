@@ -6,42 +6,60 @@ import "./App.css";
 class App extends React.Component {
  state = {
   allData: [
-    { name: "PE18_img",
-      status: true,
-      subtype: "edito",
+    { name: "collection1_img",
       type: "img",
-      img: [
-        "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519237872/St-Henri_AH18_Look_9.jpg",
-        "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519237801/St-Henri_AH18_Look_2.jpg"
-      ]
+      visible: true,
+      categories: [{
+        name: "compaign",
+        visible: true,
+        content: [
+          "img1",
+          "img2"
+        ]
+      },{
+        name: "edito",
+        visible: false,
+        content: [
+          "img1",
+          "img2"
+        ]
+      },{
+        name: "lookbook",
+        visible: false,
+        content: [
+          "img1",
+          "img2"
+        ]
+      }]
     },
-   { name: "AH18_img",
-    status: false,
-    subtype: "lookbook",
-    type: "img",
-     img: [
-       "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519237801/St-Henri_AH18_Look_2.jpg",
-       "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519237872/St-Henri_AH18_Look_9.jpg",
-     ]},
-   { name: "AH18_img",
-    status: false,
-    subtype: "edito",
-    type: "img",
-   img: [
-     "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519237801/St-Henri_AH18_Look_2.jpg",
-     "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519237872/St-Henri_AH18_Look_9.jpg",
-   ]}
+    { name: "collection2_img",
+      type: "img",
+      visible: false,
+      categories: [{
+        name: "compaign",
+        visible: true,
+        content: "content for PE17_img-1"
+      },{
+        name: "edito",
+        visible: false,
+        content: "content for PE17_img-2"
+      },{
+        name: "lookbook",
+        visible: false,
+        content: "content for PE17_img-3"
+      }]
+    }
   ]
- };
+  };
 
- displaySelected = (e, component) => {
+ displaySelectedComponent = (e, component) => {
 
   const indexElement = this.state.allData.indexOf(component);
   let newState = [...this.state.allData];
-  newState[indexElement].status = !newState[indexElement].status;
+  newState[indexElement].visible = !newState[indexElement].visible;
   const modifiedListArray = [];
   newState.filter((ele, index) => {
-    if(ele.status === true){
+    if(ele.visible === true){
       modifiedListArray.push(ele);
       console.log(ele);
     }
@@ -52,46 +70,61 @@ class App extends React.Component {
  };
 
 
+ displaySubSelectedComponent = (e, index) => {
+   console.log("working", index);
+ };
+
+
 
  render() {
   return (
    <div className="App">
     {this.state.allData.map((data, index) => (
+
      <div key={index}>
-      <button onClick={e => this.displaySelected(e, data)}>
+      <button onClick={e => this.displaySelectedComponent(e, data)}>
        {data.name}
       </button>
      </div>
     ))}
-    {this.state.allData.map(component => {
-     if (component.status
-      && component.type === "img"
-      && component.subtype === "lookbook") {
-      return (
-        <div>
-        <div>{component.subtype}</div>
-        <div>{component.name}</div>
-          {component.img.map(img => {
-            return (
-                  <img src={img} />
-            )
-          })}
-        </div>
-      );
-     }
-     if (component.status
-       && component.type === "img"
-       && component.subtype === "edito") {
-      return (
-        <div>
-        <div>{component.subtype}</div>
-        <div>{component.name}</div>
-          {component.img.map(img => {
-            return (
-              <img src={img} />
 
-            )
-          })}
+    {this.state.allData.map(component => {
+     if (component.visible
+      && component.type === "img") {
+
+      const renderButtonSubtypes = component.categories.map((ele, index) => {
+
+        return (
+          <div key={index}>
+           <button onClick={e => this.displaySubSelectedComponent(e, index)}>
+            {ele.name}
+           </button>
+          </div>
+        )
+
+      })
+
+      const selectedSubType = component.categories.map((ele, index) => {
+        if(ele.visible === true){
+          return(
+            <div key={index}>
+            {ele.name}
+            </div>
+          )
+        }else{
+          return;
+        }
+      })
+
+      return (
+        <div>
+          <section className="subtypes">
+            {renderButtonSubtypes}
+          </section>
+          <section>
+          <div>{component.name}</div>
+          {selectedSubType}
+          </section>
         </div>
       );
      }

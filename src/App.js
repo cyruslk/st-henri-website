@@ -135,11 +135,12 @@ class App extends React.Component {
 
 
 
- displaySubSelectedComponentImgs = (e, index, component) => {
+ displaySubSelectedComponentImgs = (e, component, index) => {
 
    const indexElement = this.state.allDataImages.indexOf(component);
    let newState = [...this.state.allDataImages];
-   newState[indexElement].categories[index].visible = !newState[indexElement].categories[index].visible;
+   newState[this.state.indexOfTheSelectedComponent].categories[index].visible =
+   !newState[this.state.indexOfTheSelectedComponent].categories[index].visible;
    this.setState({
      allDataImages: newState
    });
@@ -151,7 +152,7 @@ class App extends React.Component {
   const firstLayerButtonsImg = this.state.allDataImages.map((data, index) => {
     return (
         <div key={index}>
-         <button onClick={e => this.displaySelectedComponent(e, data)}>
+         <button onClick={e => this.displaySelectedComponent(e, data, index)}>
           {data.name}
          </button>
          </div>
@@ -163,7 +164,7 @@ class App extends React.Component {
 
     return (
         <div key={index}>
-         <button onClick={e => this.displaySubSelectedComponentImgs(e, data)}>
+         <button onClick={e => this.displaySubSelectedComponentImgs(e, data, index)}>
           {data.name}
          </button>
          </div>

@@ -5,10 +5,10 @@ import "./App.css";
 
 class App extends React.Component {
  state = {
-  indexOfTheSelectedComponent: "1",
+  indexOfTheSelectedComponent: "0",
   allDataImages: [
     { name: "collection1_img",
-      type: "img",
+      img: "img",
       visible: true,
       categories: [{
         name: "compaign",
@@ -31,7 +31,23 @@ class App extends React.Component {
           "img1",
           "img2"
         ]
-      }]
+      },{
+        name: "press",
+        visible: false,
+        content: [
+          "img1",
+          "img2"
+        ]
+      },
+      ,{
+        name: "information",
+        visible: false,
+        content: [
+          "img1",
+          "img2"
+        ]
+      }
+    ]
     },
     { name: "collection2_img",
       type: "img",
@@ -57,7 +73,24 @@ class App extends React.Component {
           "img1",
           "img2"
         ]
-      }]
+      },
+      {
+        name: "press",
+        visible: false,
+        content: [
+          "img1",
+          "img2"
+        ]
+      },
+      {
+        name: "information",
+        visible: false,
+        content: [
+          "img1",
+          "img2"
+        ]
+      }
+    ]
     }
   ],
   allDataTexts: [
@@ -116,7 +149,7 @@ class App extends React.Component {
   ]
   };
 
- displaySelectedComponent = (e, component) => {
+ displaySelectedComponentImgs = (e, component) => {
 
   const indexElement = this.state.allDataImages.indexOf(component);
   let newState = [...this.state.allDataImages];
@@ -133,9 +166,9 @@ class App extends React.Component {
   });
  };
 
-
-
  displaySubSelectedComponentImgs = (e, component, index) => {
+
+   console.log(index, "here");
 
    const indexElement = this.state.allDataImages.indexOf(component);
    let newState = [...this.state.allDataImages];
@@ -144,15 +177,15 @@ class App extends React.Component {
    this.setState({
      allDataImages: newState
    });
+   console.log(this.state.allDataImages, "master state");
  };
-
 
  render() {
 
   const firstLayerButtonsImg = this.state.allDataImages.map((data, index) => {
     return (
         <div key={index}>
-         <button onClick={e => this.displaySelectedComponent(e, data, index)}>
+         <button onClick={e => this.displaySelectedComponentImgs(e, data, index)}>
           {data.name}
          </button>
          </div>
@@ -160,7 +193,7 @@ class App extends React.Component {
   })
 
   const SecondLayerButtonsImg = this.state.allDataImages
-  [this.state.indexOfTheSelectedComponent].categories.map((data, index) => {
+  [this.state.indexOfTheSelectedComponent].categories.slice(0,3).map((data, index) => {
 
     return (
         <div key={index}>
@@ -170,47 +203,46 @@ class App extends React.Component {
          </div>
      )
   })
-
-
-  const firstLayerButtonsTxts = this.state.allDataTexts.map((data, index) => {
+  const firstLayerButtonsTxts = this.state.allDataImages.map((data, index) => {
     return (
       <div key={index}>
-       <button onClick={e => this.displaySelectedComponent(e, data)}>
+      <button onClick={e => this.displaySelectedComponentImgs(e, data, index)}>
         {data.name}
        </button>
       </div>
      )
   })
 
-  const SecondLayerButtonsTxts = this.state.allDataTexts
-  [this.state.indexOfTheSelectedComponent].categories.map((data, index) => {
+  const SecondLayerButtonsTxts = this.state.allDataImages
+  [this.state.indexOfTheSelectedComponent].categories.slice(3,6).map((data, index) => {
     return (
         <div key={index}>
-         <button>
+        <button onClick={e => this.displaySubSelectedComponentImgs(e, data, index+3)}>
           {data.name}
          </button>
          </div>
      )
   })
 
-
   return (
    <div className="App">
+    <img className="img_test"
+    src="http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538686524/Website-Half-Load_xluytj.jpg" />
    <header>
      <section className="buttons_left">
      <div>{firstLayerButtonsImg}</div>
      <div>{SecondLayerButtonsImg}</div>
      </section>
      <section className="buttons_right">
-     {firstLayerButtonsTxts}
+     <div>{firstLayerButtonsTxts}</div>
+     <div>{SecondLayerButtonsTxts}</div>
      </section>
    </header>
    <main>
    </main>
 
     {this.state.allDataImages.map(component => {
-     if (component.visible
-      && component.type === "img") {
+     if (component.visible) {
 
       const selectedSubType = component.categories.map((ele, index) => {
         if(ele.visible && ele.name === "compaign"){
@@ -231,6 +263,18 @@ class App extends React.Component {
                 {ele.name}
                 </div>
               )
+        }if(ele.visible && ele.name === "press"){
+          return(
+            <div key={index}>
+            {ele.name}
+            </div>
+          )
+        }if(ele.visible && ele.name === "information"){
+          return(
+            <div key={index}>
+            {ele.name}
+            </div>
+          )
         }else{
           return;
         }

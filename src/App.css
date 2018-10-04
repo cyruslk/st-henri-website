@@ -8,11 +8,27 @@ header{
     justify-content: center;
 }
 
+
+.img_test{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .buttons_left{
   display: flex;
 }
 
 .buttons_left div{
+  width: 50%;
+}
+
+.buttons_right{
+  display: flex;
+}
+
+.buttons_right div{
   width: 50%;
 }
 

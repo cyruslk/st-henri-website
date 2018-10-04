@@ -105,6 +105,7 @@ class App extends React.Component {
     ))}
 
     {this.state.allData.map(component => {
+      console.log("this is the component", component);
      if (component.visible
       && component.type === "img") {
 

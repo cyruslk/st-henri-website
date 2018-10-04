@@ -18,7 +18,7 @@ class App extends React.Component {
         ]
       },{
         name: "edito",
-        visible: false,
+        visible: true,
         content: [
           "img1",
           "img2"
@@ -57,11 +57,11 @@ class App extends React.Component {
   const indexElement = this.state.allData.indexOf(component);
   let newState = [...this.state.allData];
   newState[indexElement].visible = !newState[indexElement].visible;
+
   const modifiedListArray = [];
   newState.filter((ele, index) => {
     if(ele.visible === true){
       modifiedListArray.push(ele);
-      console.log(ele);
     }
   })
   this.setState({
@@ -70,8 +70,15 @@ class App extends React.Component {
  };
 
 
- displaySubSelectedComponent = (e, index) => {
-   console.log("working", index);
+ displaySubSelectedComponent = (e, index, component) => {
+   const indexElement = this.state.allData.indexOf(component);
+   let newState = [...this.state.allData];
+   newState[indexElement].categories[index].visible = !newState[indexElement].categories[index].visible;
+   // either this or a filter loop to add and remove these subcomponents to the [];
+   // need to be confirmed with M.
+   this.setState({
+     allData: newState
+   });
  };
 
 
@@ -81,7 +88,7 @@ class App extends React.Component {
    <div className="App">
     {this.state.allData.map((data, index) => (
 
-     <div key={index}>
+     <div key={index} id="all_buttons_of_cms">
       <button onClick={e => this.displaySelectedComponent(e, data)}>
        {data.name}
       </button>
@@ -93,10 +100,9 @@ class App extends React.Component {
       && component.type === "img") {
 
       const renderButtonSubtypes = component.categories.map((ele, index) => {
-
         return (
-          <div key={index}>
-           <button onClick={e => this.displaySubSelectedComponent(e, index)}>
+          <div key={index} id="sub_buttons_of_collections">
+           <button onClick={e => this.displaySubSelectedComponent(e, index, component)}>
             {ele.name}
            </button>
           </div>
@@ -105,9 +111,10 @@ class App extends React.Component {
       })
 
       const selectedSubType = component.categories.map((ele, index) => {
+        // Here I'll make the other filter
         if(ele.visible === true){
           return(
-            <div key={index}>
+            <div key={index} id="sub_category_of_collection_rendered">
             {ele.name}
             </div>
           )
@@ -117,12 +124,14 @@ class App extends React.Component {
       })
 
       return (
-        <div>
+        <div key={Math.random().toString(36).substring(7)}>
           <section className="subtypes">
             {renderButtonSubtypes}
           </section>
           <section>
-          <div>{component.name}</div>
+          <div id="category_of_collection">
+          {component.name}
+          </div>
           {selectedSubType}
           </section>
         </div>

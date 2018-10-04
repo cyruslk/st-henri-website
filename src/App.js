@@ -158,6 +158,19 @@ class App extends React.Component {
      )
   })
 
+  const SecondLayerButtonsImg = this.state.allDataImages
+  [this.state.indexOfTheSelectedComponent].categories.map((data, index) => {
+
+    return (
+        <div key={index}>
+         <button onClick={e => this.displaySubSelectedComponentImgs(e, data)}>
+          {data.name}
+         </button>
+         </div>
+     )
+  })
+
+
   const firstLayerButtonsTxts = this.state.allDataTexts.map((data, index) => {
     return (
       <div key={index}>
@@ -168,18 +181,17 @@ class App extends React.Component {
      )
   })
 
-  const SecondLayerButtonsImg = this.state.allDataImages
+  const SecondLayerButtonsTxts = this.state.allDataTexts
   [this.state.indexOfTheSelectedComponent].categories.map((data, index) => {
     return (
         <div key={index}>
-         <button onClick={e => this.displaySelectedComponent(e, data)}>
+         <button>
           {data.name}
          </button>
          </div>
      )
   })
 
-  alert(this.state.indexOfTheSelectedComponent)
 
   return (
    <div className="App">
@@ -192,6 +204,8 @@ class App extends React.Component {
      {firstLayerButtonsTxts}
      </section>
    </header>
+   <main>
+   </main>
 
     {this.state.allDataImages.map(component => {
      if (component.visible

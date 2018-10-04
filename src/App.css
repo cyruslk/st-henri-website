@@ -8,6 +8,14 @@ header{
     justify-content: center;
 }
 
+.buttons_left{
+  display: flex;
+}
+
+.buttons_left div{
+  width: 50%;
+}
+
 header section{
   width: 50vw;
 }

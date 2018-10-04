@@ -16,6 +16,13 @@ img{
   display: block;
 }
 
+.main_container{
+  background-color: black;
+  color: white;
+  position: relative;
+  top: 3vw;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

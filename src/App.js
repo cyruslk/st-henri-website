@@ -38,15 +38,24 @@ class App extends React.Component {
       categories: [{
         name: "compaign",
         visible: true,
-        content: "content for PE17_img-1"
+        content: [
+          "img1",
+          "img2"
+        ]
       },{
         name: "edito",
         visible: false,
-        content: "content for PE17_img-2"
+        content: [
+          "img1",
+          "img2"
+        ]
       },{
         name: "lookbook",
         visible: false,
-        content: "content for PE17_img-3"
+        content: [
+          "img1",
+          "img2"
+        ]
       }]
     }
   ]
@@ -111,13 +120,24 @@ class App extends React.Component {
       })
 
       const selectedSubType = component.categories.map((ele, index) => {
-        // Here I'll make the other filter
-        if(ele.visible === true){
+        if(ele.visible && ele.name === "compaign"){
           return(
-            <div key={index} id="sub_category_of_collection_rendered">
+            <div key={index}>
             {ele.name}
             </div>
           )
+        }if(ele.visible && ele.name === "lookbook"){
+            return(
+              <div key={index}>
+              {ele.name}
+              </div>
+            )
+          }if(ele.visible && ele.name === "edito"){
+              return(
+                <div key={index}>
+                {ele.name}
+                </div>
+              )
         }else{
           return;
         }
@@ -125,15 +145,17 @@ class App extends React.Component {
 
       return (
         <div key={Math.random().toString(36).substring(7)}>
-          <section className="subtypes">
-            {renderButtonSubtypes}
-          </section>
-          <section>
-          <div id="category_of_collection">
-          {component.name}
-          </div>
-          {selectedSubType}
-          </section>
+            <section className="subtypes">
+              {renderButtonSubtypes}
+            </section>
+            <section>
+            <div id="category">
+            {component.name}
+            </div>
+            <div id="sub_category">
+            {selectedSubType}
+            </div>
+            </section>
         </div>
       );
      }

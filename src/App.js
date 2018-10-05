@@ -226,8 +226,6 @@ class App extends React.Component {
 
   return (
    <div className="App">
-    <img className="img_test"
-    src="http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538686524/Website-Half-Load_xluytj.jpg" />
    <header>
      <section className="buttons_left">
      <div>{firstLayerButtonsImg}</div>

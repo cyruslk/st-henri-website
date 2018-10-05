@@ -1,6 +1,6 @@
 import React from "react";
-import Subscribe from "./Subscribe.js"
-
+import Subscribe from "./Subscribe.js";
+import styled, { keyframes } from 'styled-components'
 import "./App.css";
 
 
@@ -265,8 +265,27 @@ class App extends React.Component {
             </header>
             <main className="lookbook">
               {ele.content.map((ele, index) => {
+
+                const toggleVisibility = keyframes`
+                0%{
+                     opacity:0;
+                 }
+                 90% {
+                    opacity:0;
+                 }
+                 100% {
+                     opacity:1;
+                 }
+                `;
+
+                console.log(index);
+
+                const Img = styled.img`
+                  animation: ${toggleVisibility} ${index}s linear;
+                  animation-iteration-count: 1;
+                `
                 return(
-                    <img src={ele} key={index}/>
+                    <Img src={ele}/>
                 )
               })}
             </main>

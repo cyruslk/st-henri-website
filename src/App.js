@@ -1,7 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import Subscribe from "./Subscribe.js"
 
 import "./App.css";
+
 
 class App extends React.Component {
  state = {
@@ -147,7 +148,7 @@ class App extends React.Component {
             {
               title: "Lorem ipsum",
               desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            }  
+            }
           ]
         }
       ]
@@ -354,10 +355,10 @@ class App extends React.Component {
               <div className="footer_links">
               {this.state.footer[0].links.map((ele, index) => {
                 return (
-                  <a href={ele.link} key={index}>{ele.name}</a>
+                  <a href={ele.link} key={index} target="_blank">{ele.name}</a>
                 )
               })}
-              NL-----xxx
+              <Subscribe />
               </div>
               <div className="rights_reserved">
                 {this.state.footer[1].others[0].text}

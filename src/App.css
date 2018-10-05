@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'GT-America-Standard-Regular';
+  src: url('font/GT-America-Standard-Regular.ttf'); /* IE9 Compat Modes */
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +18,7 @@
 *{
   color: black;
   text-decoration: none;
+  font-family: 'GT-America-Standard-Regular';
 }
 
 header{
@@ -139,6 +153,7 @@ main{
   text-align: left;
   text-transform: uppercase;
   padding-left: 7.3vw;
+  padding-right: 2vw;
 }
 
 footer{
@@ -160,8 +175,25 @@ footer a{
 
 .rights_reserved{
   text-align: left;
+  padding-top: 0.2vw;
 }
 
 .rights_reserved span{
   padding-left: 1.1vw;
+}
+
+#mc-embedded-subscribe{
+  position: absolute;
+  visibility: hidden;
+}
+
+input{
+  border: none;
+  border-bottom: 1px solid;
+  font-family: 'GT-America-Standard-Regular';
+  font-size: 19px;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
 }

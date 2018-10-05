@@ -16,14 +16,14 @@ class App extends React.Component {
         name: "lookbook",
         visible: true,
         content: [
-          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
-          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
-          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
-          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
-          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
-          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
-          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
-          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000,q_90/v1519239819/ST-HENRI_PE18_LOOK_007.jpg",
+          "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000,q_90/v1519239814/ST-HENRI_PE18_LOOK_001.jpg",
+          "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519239800/ST-HENRI_PE18_LOOK_002.jpg",
+          "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519239781/ST-HENRI_PE18_LOOK_003.jpg",
+          "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519239781/ST-HENRI_PE18_LOOK_004.jpg",
+          "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519239789/ST-HENRI_PE18_LOOK_006.jpg",
+          "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000/v1519239812/ST-HENRI_PE18_LOOK_008.jpg",
+          "http://res.cloudinary.com/dm46a3uv9/image/upload/c_scale,h_1000,q_90/v1519239804/ST-HENRI_PE18_LOOK_005.jpg",
         ]
       },{
         name: "campaign",
@@ -270,16 +270,14 @@ class App extends React.Component {
                 0%{
                      opacity:0;
                  }
-                 90% {
+                 99.9% {
                     opacity:0;
                  }
                  100% {
                      opacity:1;
                  }
                 `;
-
-                console.log(index);
-
+                
                 const Img = styled.img`
                   animation: ${toggleVisibility} ${index}s linear;
                   animation-iteration-count: 1;

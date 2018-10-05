@@ -7,32 +7,38 @@ class App extends React.Component {
  state = {
   indexOfTheSelectedComponent: "0",
   allDataImages: [
-    { name: "collection1_img",
+    { name: "PE18",
+      longerName: "Printemps été 2018",
       img: "img",
       visible: true,
       categories: [{
-        name: "compaign",
-        visible: true,
-        content: [
-          "img1",
-          "img2"
-        ]
-      },{
-        name: "edito",
-        visible: true,
-        content: [
-          "img1",
-          "img2"
-        ]
-      },{
         name: "lookbook",
+        visible: true,
+        content: [
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+        ]
+      },{
+        name: "campaign",
         visible: false,
         content: [
-          "img1",
-          "img2"
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538698538/campaign_1_nnjqga.jpg",
         ]
       },{
-        name: "press",
+        name: "editorial",
+        visible: false,
+        content: [
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538697531/editorial_1_vis58h.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538697531/editorial_1_vis58h.jpg"
+        ]
+      },{
+        name: "information",
         visible: false,
         content: [
           "img1",
@@ -40,7 +46,7 @@ class App extends React.Component {
         ]
       },
       ,{
-        name: "information",
+        name: "press release",
         visible: false,
         content: [
           "img1",
@@ -49,37 +55,35 @@ class App extends React.Component {
       }
     ]
     },
-    { name: "collection2_img",
+    { name: "AH18",
+      longerName: "Automne Hiver 2018",
       type: "img",
       visible: false,
       categories: [{
-        name: "compaign",
-        visible: true,
-        content: [
-          "img1",
-          "img2"
-        ]
-      },{
-        name: "edito",
-        visible: false,
-        content: [
-          "img1",
-          "img2"
-        ]
-      },{
         name: "lookbook",
-        visible: false,
+        visible: true,
         content: [
-          "img1",
-          "img2"
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538694209/test_img_xv3j6i.jpg",
         ]
-      },
-      {
-        name: "press",
+      },{
+        name: "campaign",
         visible: false,
         content: [
-          "img1",
-          "img2"
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538698538/campaign_1_nnjqga.jpg"
+        ]
+      },{
+        name: "editorial",
+        visible: false,
+        content: [
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538697531/editorial_1_vis58h.jpg",
+          "http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538697531/editorial_1_vis58h.jpg"
         ]
       },
       {
@@ -87,70 +91,33 @@ class App extends React.Component {
         visible: false,
         content: [
           "img1",
+          "img2"
+        ]
+      },
+      {
+        name: "press release",
+        visible: false,
+        content: [
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "img2",
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "img2",
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "img2",
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "img2",
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "img2",
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
           "img2"
         ]
       }
     ]
-    }
-  ],
-  allDataTexts: [
-    { name: "collection1_text",
-      type: "img",
-      visible: true,
-      categories: [{
-        name: "information",
-        visible: true,
-        content: [
-          "img1",
-          "img2"
-        ]
-      },{
-        name: "pressrelease",
-        visible: true,
-        content: [
-          "img1",
-          "img2"
-        ]
-      },{
-        name: "pressrelease2",
-        visible: false,
-        content: [
-          "img1",
-          "img2"
-        ]
-      }]
-    },
-    { name: "collection1_text",
-      type: "img",
-      visible: false,
-      categories: [{
-        name: "information",
-        visible: true,
-        content: [
-          "img1",
-          "img2"
-        ]
-      },{
-        name: "pressrelease",
-        visible: false,
-        content: [
-          "img1",
-          "img2"
-        ]
-      },{
-        name: "pressrelease2",
-        visible: false,
-        content: [
-          "img1",
-          "img2"
-        ]
-      }]
     }
   ]
   };
 
  displaySelectedComponentImgs = (e, component) => {
-
   const indexElement = this.state.allDataImages.indexOf(component);
   let newState = [...this.state.allDataImages];
   newState[indexElement].visible = !newState[indexElement].visible;
@@ -167,9 +134,6 @@ class App extends React.Component {
  };
 
  displaySubSelectedComponentImgs = (e, component, index) => {
-
-   console.log(index, "here");
-
    const indexElement = this.state.allDataImages.indexOf(component);
    let newState = [...this.state.allDataImages];
    newState[this.state.indexOfTheSelectedComponent].categories[index].visible =
@@ -185,30 +149,29 @@ class App extends React.Component {
   const firstLayerButtonsImg = this.state.allDataImages.map((data, index) => {
     return (
         <div key={index}>
-         <button onClick={e => this.displaySelectedComponentImgs(e, data, index)}>
+         <span onClick={e => this.displaySelectedComponentImgs(e, data, index)}>
           {data.name}
-         </button>
+         </span>
          </div>
      )
   })
 
   const SecondLayerButtonsImg = this.state.allDataImages
   [this.state.indexOfTheSelectedComponent].categories.slice(0,3).map((data, index) => {
-
     return (
         <div key={index}>
-         <button onClick={e => this.displaySubSelectedComponentImgs(e, data, index)}>
+         <span onClick={e => this.displaySubSelectedComponentImgs(e, data, index)}>
           {data.name}
-         </button>
+         </span>
          </div>
      )
   })
   const firstLayerButtonsTxts = this.state.allDataImages.map((data, index) => {
     return (
       <div key={index}>
-      <button onClick={e => this.displaySelectedComponentImgs(e, data, index)}>
+      <span onClick={e => this.displaySelectedComponentImgs(e, data, index)}>
         {data.name}
-       </button>
+       </span>
       </div>
      )
   })
@@ -217,9 +180,9 @@ class App extends React.Component {
   [this.state.indexOfTheSelectedComponent].categories.slice(3,6).map((data, index) => {
     return (
         <div key={index}>
-        <button onClick={e => this.displaySubSelectedComponentImgs(e, data, index+3)}>
+        <a onClick={e => this.displaySubSelectedComponentImgs(e, data, index+3)}>
           {data.name}
-         </button>
+         </a>
          </div>
      )
   })
@@ -229,50 +192,109 @@ class App extends React.Component {
     <img className="img_test"
     src="http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538686524/Website-Half-Load_xluytj.jpg" />
    <header>
+     <section className="header">
+      <div>ST-HENRI LIBRARY</div>
+     </section>
      <section className="buttons_left">
-     <div>{firstLayerButtonsImg}</div>
-     <div>{SecondLayerButtonsImg}</div>
+       <div>IMAGE</div>
+       <div className="firstlayer_buttons">{firstLayerButtonsImg}</div>
+       <div className="secondlayer_buttons">{SecondLayerButtonsImg}</div>
      </section>
      <section className="buttons_right">
-     <div>{firstLayerButtonsTxts}</div>
-     <div>{SecondLayerButtonsTxts}</div>
+       <div>TEXT</div>
+       <div className="firstlayer_buttons_texts">{firstLayerButtonsTxts}</div>
+       <div className="secondlayer_buttons">{SecondLayerButtonsTxts}</div>
      </section>
    </header>
-   <main>
-   </main>
 
     {this.state.allDataImages.map(component => {
      if (component.visible) {
 
       const selectedSubType = component.categories.map((ele, index) => {
-        if(ele.visible && ele.name === "compaign"){
+        if(ele.visible && ele.name === "lookbook"){
           return(
-            <div key={index}>
-            {ele.name}
+            <div key={index} className="components_styling">
+            <header>
+              <div>
+                {component.longerName}
+              </div>
+              <div>
+                {ele.name}
+              </div>
+            </header>
+            <main className="lookbook">
+              {ele.content.map((ele, index) => {
+                return(
+                    <img src={ele} key={index}/>
+                )
+              })}
+            </main>
             </div>
           )
-        }if(ele.visible && ele.name === "lookbook"){
+        }if(ele.visible && ele.name === "campaign"){
             return(
-              <div key={index}>
-              {ele.name}
+              <div key={index} className="components_styling">
+              <header>
+                <div>
+                  {component.longerName}
+                </div>
+                <div>
+                  {ele.name}
+                </div>
+              </header>
+              <main className="campaign">
+                {ele.content.map((ele, index) => {
+                  return(
+                      <img src={ele} key={index}/>
+                  )
+                })}
+              </main>
               </div>
             )
-          }if(ele.visible && ele.name === "edito"){
+          }if(ele.visible && ele.name === "editorial"){
               return(
-                <div key={index}>
-                {ele.name}
+                <div key={index} className="components_styling">
+                <header>
+                  <div>
+                    {component.longerName}
+                  </div>
+                  <div>
+                    {ele.name}
+                  </div>
+                </header>
+                <main className="editorial">
+                  {ele.content.map((ele, index) => {
+                    return(
+                        <img src={ele} key={index}/>
+                    )
+                  })}
+                </main>
                 </div>
               )
-        }if(ele.visible && ele.name === "press"){
-          return(
-            <div key={index}>
-            {ele.name}
-            </div>
-          )
         }if(ele.visible && ele.name === "information"){
           return(
-            <div key={index}>
-            {ele.name}
+            <div key={index} className="components_styling">
+            <header>
+              <div>
+                {component.longerName}
+              </div>
+              <div>
+                {ele.name}
+              </div>
+            </header>
+            </div>
+          )
+        }if(ele.visible && ele.name === "press release"){
+          return(
+            <div key={index} className="components_styling">
+              <header>
+                <div>
+                  {component.longerName}
+                </div>
+                <div>
+                  {ele.name}
+                </div>
+              </header>
             </div>
           )
         }else{
@@ -281,15 +303,10 @@ class App extends React.Component {
       })
 
       return (
-        <div key={Math.random().toString(36).substring(7)} id="test">
-            <section>
-            <div id="category">
-            {component.name}
-            </div>
-            <div id="sub_category">
+        <div key={Math.random().toString(36).substring(7)} className="main_content">
+          <section>
             {selectedSubType}
-            </div>
-            </section>
+          </section>
         </div>
       );
      }

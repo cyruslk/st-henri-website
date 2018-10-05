@@ -2,10 +2,62 @@
   text-align: center;
 }
 
+
 header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  text-transform: uppercase;
+}
+
+.header{
+  position: absolute;
+  left: 0.9vw;
+  top: 0.8vw;
+}
+
+.buttons_left{
+  position: absolute;
+  left: 25.5vw;
+  top: 0.8vw;
+  display: flex;
+}
+
+.buttons_right{
+  position: absolute;
+  left: 62.6vw;
+  top: 0.8vw;
+  display: flex;
+}
+
+
+.firstlayer_buttons{
+  padding-left: 4.7vw;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+
+.secondlayer_buttons{
+  padding-left: 5.6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+
+
+.firstlayer_buttons_texts{
+  padding-left: 5.4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+
+.main_content{
+  position: relative;
+  top: 15.5vw;
+  margin-left: 0.7vw;
+  margin-right: 0.7vw;
 }
 
 
@@ -14,24 +66,50 @@ header{
   top: 0;
   left: 0;
   z-index: -1;
+  width: 100vw;
+  opacity: 0.2;
 }
 
-.buttons_left{
+.components_styling header{
   display: flex;
+  align-items: baseline;
 }
 
-.buttons_left div{
-  width: 50%;
+.components_styling header div:last-child{
+    margin-left: 4.5vw;
 }
 
-.buttons_right{
-  display: flex;
+main{
+  margin-top: 2vw;
+  margin-bottom: 3vw;
 }
 
-.buttons_right div{
-  width: 50%;
+.lookbook img{
+  width: 24.69%;
+  padding-left: 0.2vw;
+  padding-right: 0.2vw;
 }
 
-header section{
-  width: 50vw;
+.lookbook img:nth-child(4n+0){
+  padding-right: 0;
+}
+
+.lookbook img:nth-child(4n+1){
+  padding-left: 0;
+}
+
+.editorial img{
+  width: 49.6%;
+}
+
+.editorial img:first-child{
+  margin-right: 0.3vw;
+}
+
+.editorial img:last-child{
+  margin-left: 0.3vw;
+}
+
+.campaign img{
+  width: 100%;
 }

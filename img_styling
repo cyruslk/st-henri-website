@@ -1,0 +1,2 @@
+animation: ${toggleVisibility} ${index}s linear;
+animation-iteration-count: 1;

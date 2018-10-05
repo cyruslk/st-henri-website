@@ -277,10 +277,9 @@ class App extends React.Component {
                      opacity:1;
                  }
                 `;
-                
+
                 const Img = styled.img`
-                  animation: ${toggleVisibility} ${index}s linear;
-                  animation-iteration-count: 1;
+                
                 `
                 return(
                     <Img src={ele}/>

@@ -187,7 +187,7 @@ class App extends React.Component {
 
   const firstLayerButtonsImg = this.state.allDataImages.map((data, index) => {
     return (
-        <div key={index}>
+        <div key={index} className="buttons">
          <span onClick={e => this.displaySelectedComponentImgs(e, data, index)}>
           {data.name}
          </span>
@@ -198,7 +198,7 @@ class App extends React.Component {
   const SecondLayerButtonsImg = this.state.allDataImages
   [this.state.indexOfTheSelectedComponent].categories.slice(0,3).map((data, index) => {
     return (
-        <div key={index}>
+      <div key={index} className="buttons">
          <span onClick={e => this.displaySubSelectedComponentImgs(e, data, index)}>
           {data.name}
          </span>
@@ -207,7 +207,7 @@ class App extends React.Component {
   })
   const firstLayerButtonsTxts = this.state.allDataImages.map((data, index) => {
     return (
-      <div key={index}>
+      <div key={index} className="buttons">
       <span onClick={e => this.displaySelectedComponentImgs(e, data, index)}>
         {data.name}
        </span>
@@ -218,7 +218,7 @@ class App extends React.Component {
   const SecondLayerButtonsTxts = this.state.allDataImages
   [this.state.indexOfTheSelectedComponent].categories.slice(3,6).map((data, index) => {
     return (
-        <div key={index}>
+        <div key={index} className="buttons">
         <a onClick={e => this.displaySubSelectedComponentImgs(e, data, index+3)}>
           {data.name}
          </a>
@@ -279,7 +279,8 @@ class App extends React.Component {
                 `;
 
                 const Img = styled.img`
-                
+                  animation: ${toggleVisibility} ${index}s linear;
+                  animation-iteration-count: 1;
                 `
                 return(
                     <Img src={ele}/>

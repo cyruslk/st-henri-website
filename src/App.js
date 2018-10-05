@@ -112,6 +112,46 @@ class App extends React.Component {
       }
     ]
     }
+  ],
+  footer: [
+    {
+      links: [
+        {
+          name: "contact",
+          link: "mailto:info@c-t-l-k.com"
+        },
+        {
+          name: "instagram",
+          link: "https://www.instagram.com/sthenrilibrary/"
+        },
+      ]
+    },
+    {
+      others: [
+        {
+          name: "rights",
+          text: "All rights reserved St-Henri 2017–2019"
+        },
+        {
+          name: "terms",
+          text: "TERMS OF USE",
+          textPage: [
+            {
+              title: "Lorem ipsum",
+              desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+              title: "Lorem ipsum",
+              desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            },
+            {
+              title: "Lorem ipsum",
+              desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            }  
+          ]
+        }
+      ]
+    }
   ]
   };
 
@@ -186,6 +226,7 @@ class App extends React.Component {
   })
 
   return (
+
    <div className="App">
     <img className="img_test"
     src="http://res.cloudinary.com/www-c-t-l-k-com/image/upload/v1538705547/Website-Full-Load_wxv4yy.jpg" />
@@ -204,6 +245,7 @@ class App extends React.Component {
        <div className="secondlayer_buttons">{SecondLayerButtonsTxts}</div>
      </section>
    </header>
+
 
     {this.state.allDataImages.map(component => {
      if (component.visible) {
@@ -308,6 +350,22 @@ class App extends React.Component {
           <section>
             {selectedSubType}
           </section>
+          <footer>
+              <div className="footer_links">
+              {this.state.footer[0].links.map((ele, index) => {
+                return (
+                  <a href={ele.link} key={index}>{ele.name}</a>
+                )
+              })}
+              NL-----xxx
+              </div>
+              <div className="rights_reserved">
+                {this.state.footer[1].others[0].text}
+                <span>
+                  {this.state.footer[1].others[1].text}
+                </span>
+              </div>
+          </footer>
         </div>
       );
      }

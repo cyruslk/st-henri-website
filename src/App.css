@@ -63,12 +63,13 @@ header{
 
 .img_test{
   position: absolute;
-  top: 0;
+  top: -86vw;
   left: 0;
   z-index: -1;
   width: 100vw;
   opacity: 0.2;
 }
+
 
 .components_styling header{
   display: flex;
@@ -81,7 +82,7 @@ header{
 
 main{
   margin-top: 2vw;
-  margin-bottom: 3vw;
+  margin-bottom: 4vw;
 }
 
 .lookbook img{
@@ -112,4 +113,26 @@ main{
 
 .campaign img{
   width: 100%;
+}
+
+.press_release{
+  column-count: 2;
+}
+
+.press_release p{
+  text-align: left;
+  margin-top: 0;
+  padding-right: 10vw;
+}
+
+.information{
+  display: flex;
+  align-items: flex-start;
+}
+
+.information p{
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  padding-left: 7.3vw;
 }
